@@ -37,7 +37,7 @@ services:
     image: camunda/operate:${CAMUNDA_PLATFORM_VERSION:-8.1.5}
     container_name: operate
     ports:
-      - "8081:8080"
+      - "8071:8080"
     environment: # https://docs.camunda.io/docs/self-managed/operate-deployment/configuration/
       - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
       - CAMUNDA_OPERATE_ELASTICSEARCH_URL=http://elasticsearch:9200
@@ -52,7 +52,7 @@ services:
     image: camunda/tasklist:${CAMUNDA_PLATFORM_VERSION:-8.1.5}
     container_name: tasklist
     ports:
-      - "8082:8080"
+      - "8072:8080"
     environment: # https://docs.camunda.io/docs/self-managed/tasklist-deployment/configuration/
       - CAMUNDA_TASKLIST_ZEEBE_GATEWAYADDRESS=zeebe:26500
       - CAMUNDA_TASKLIST_ELASTICSEARCH_URL=http://elasticsearch:9200
