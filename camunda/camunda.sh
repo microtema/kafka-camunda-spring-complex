@@ -15,12 +15,17 @@ echo install camunda Platform 8
 helm install dev camunda/camunda-platform \
     -f camunda-platform-core-kind-values.yaml
 
-echo gateway fro clients
-kubectl port-forward svc/dev-zeebe-gateway 26500:26500 -n default
+kubectl get pods -w
+
+# echo gateway fro clients
+# kubectl port-forward svc/dev-zeebe-gateway 26500:26500 -n default
 
 # echo Operate
 # kubectl port-forward svc/dev-operate  8061:80
 
 # echo Operate
 # kubectl port-forward svc/dev-tasklist 8062:80
+
+# clean  camunda-platform-local
+# kind delete cluster --name camunda-platform-local
 
